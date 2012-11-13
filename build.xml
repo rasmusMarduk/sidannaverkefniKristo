@@ -35,4 +35,12 @@
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
   </target>
+
+  <target name="run" depends="clean,compile">
+  	<java classname="sidannaverkefniKristo.TicTacToe" fork="yes">
+		<classpath refid="classpath" />
+	</java>
+  </target>
+
+  <target name="TicTacToe" depends="clean,run"/>
 </project>
