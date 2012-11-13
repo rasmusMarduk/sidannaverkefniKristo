@@ -36,10 +36,23 @@
     <delete dir="${dist}"/>
   </target>
 
+<!--
   <target name="run" depends="clean,compile">
   	<java classname="sidannaverkefniKristo.TicTacToe" fork="yes">
 		<classpath refid="classpath" />
 	</java>
+  </target>
+-->
+
+	<target name="jar" depends="compile" description="create a Jar file for the application">
+		<jar destfile="${java-root-dir}/ttt.jar">
+			<fileset dir="${classes-dir}" includes="**/*.class"/>
+      <manifest>
+        <attribute name="Main-Class" value="javattt.Main"/>
+      </manifest>
+    </jar>
+    <copy file="${java-root-dir}/ttt.jar" tofile="${server-lib-dir}/ttt.jar" />
+    <copy file="${java-root-dir}/ttt.jar" tofile="${limelight-lib-dir}/ttt.jar" />
   </target>
 
   <target name="TicTacToe" depends="clean,run"/>
