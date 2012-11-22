@@ -10,8 +10,8 @@ import java.io.*;
 public class Main{
 	public static void main(String [] args){
 		Board gameBoard = new Board();
-	    Player player1 = new Player("", "X");
-	    Player player2 = new Player("", "O");
+	    Player player1 = new Player("", 'X');
+	    Player player2 = new Player("", 'O');
 		boolean isWinner = false;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
@@ -44,13 +44,14 @@ public class Main{
         	}
         } 
      	
-		Player currentPlayer = Player2; 
+		String currentPlayer = player2.getPlayerName();
 		int playCount = 0;
 		while( !isWinner || (playCount == 10)){
-			if ( currentPlayer == Player1 ){
-				currentPlayer = Player2;
-			else (
-				currentPlayer = Player1;
+			if ( currentPlayer == player1.getPlayerName() ){
+				currentPlayer = player2.getPlayerName();
+			}
+			else {
+				currentPlayer = player1.getPlayerName();
 			}
 
 	    	System.out.println("It's " + currentPlayer + " turn. Choose a number: ");
