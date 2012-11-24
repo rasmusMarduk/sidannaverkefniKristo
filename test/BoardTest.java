@@ -1,12 +1,13 @@
-package tictactoe;
 
 import junit.framework.*;
+import org.junit.Before;
+import org.junit.Test;
+import tictactoe.*;
 
-public class BoardTest {
-
-	public void testAdd() {
-
-		//Board board1 = new Board();
+public class BoardTest extends Assert 
+{
+	public void testAdd() throws Exception {
+		Board board1 = new Board();
 		/*
 		assertEquals("1");
 		assertEquals("2");
@@ -18,6 +19,6 @@ public class BoardTest {
 		assertEquals("8");
 		assertEquals("9");
 		*/
-		assertEquals(1, 1);
+		Assert.assertEquals("1", "1");
 	}
 }
