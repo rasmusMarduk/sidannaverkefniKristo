@@ -30,26 +30,20 @@ public class Player{
 		return marker;
 	}
 
-	public boolean isWinner(Board board) {
-		//char[] gameBoard = new char[9];
-		//gameBoard = Board();
-		//char[] gameBoard = new char[9];
-		
+	public boolean isWinner(Board board) {	
         char[] gameBoard = board.getBoardArray();
 
-		
-		//gameBoard = Board.getBoardArray();
 		char marker = getPlayerMarker();
 		
-		for (int i=0; i<3; i+=3)
+		for (int i=0; i<7; i+=3)
 		{
 			int j=i/3; 
-			if ((gameBoard[i] == marker && gameBoard[i+1] == marker && gameBoard[i+2] == marker) ||
-				(gameBoard[j] == marker && gameBoard[j+3] == marker && gameBoard[j+6] == marker))
+			if ((gameBoard[i] == marker && gameBoard[i+1] == marker && gameBoard[i+2] == marker) ||		//Tékkum á röðunum..
+				(gameBoard[j] == marker && gameBoard[j+3] == marker && gameBoard[j+6] == marker))		//..og dálkunum..
 				return true;
 		}	
 
-		if ((gameBoard[0] == marker && gameBoard[4] == marker && gameBoard[8] == marker) ||
+		if ((gameBoard[0] == marker && gameBoard[4] == marker && gameBoard[8] == marker) ||		//..og hornalínunum.
 			(gameBoard[2] == marker && gameBoard[4] == marker && gameBoard[6] == marker))
 		return true;
 
