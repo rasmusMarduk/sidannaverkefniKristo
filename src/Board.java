@@ -29,10 +29,19 @@ public class Board{
 			}
 		}
 	}
+	
 	public char[] getBoardArray()
 	{
 		return boardArray;
 	}
-
+	
+	public boolean isFilled(int i)
+	{
+		if (boardArray[i] == 'O' || boardArray[i] == 'X')
+			return true;
+		
+		return false;
+	}
+	
 }
  
