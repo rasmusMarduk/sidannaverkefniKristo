@@ -74,17 +74,17 @@ public class Main{
 		char[] gameBoard = board.getBoardArray();
 		//board = gameBoard;
 		
-		for (int i=0; i<3; i+=3)
+		for (int i=0; i<7; i+=3)
 		{
 			int j=i/3; 
-			if (((board.isFilled(i) || board.isFilled(i+1) || board.isFilled(i+2)) &&
+			if (((board.isFilled(i) || board.isFilled(i+1) || board.isFilled(i+2)) &&	//Tékkum á röðunum..
 				(gameBoard[i] == gameBoard[i+1] && gameBoard[i] == gameBoard[i+2])) ||
-				((board.isFilled(j) || board.isFilled(j+3) || board.isFilled(j+6)) && 
+				((board.isFilled(j) || board.isFilled(j+3) || board.isFilled(j+6)) && 	//..og dálkunum..
 				(gameBoard[j] == gameBoard[j+3] && gameBoard[j] == gameBoard[j+6])))
 				return true;
 		}
 		
-		if (((board.isFilled(0) || board.isFilled(4) || board.isFilled(8)) &&
+		if (((board.isFilled(0) || board.isFilled(4) || board.isFilled(8)) &&	//..og hornalínunum.
 			(gameBoard[0] == gameBoard[4] && gameBoard[0] == gameBoard[8])) ||
 			((board.isFilled(2) || board.isFilled(4) || board.isFilled(6)) &&
 			(gameBoard[2] == gameBoard[4] && gameBoard[2] == gameBoard[6])))

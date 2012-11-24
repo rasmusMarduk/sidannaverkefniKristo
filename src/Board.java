@@ -35,7 +35,7 @@ public class Board{
 		return boardArray;
 	}
 	
-	public boolean isFilled(int i)
+	public boolean isFilled(int i) //Tékkar hvort sé búið að merkja í reit i á borðinu
 	{
 		if (boardArray[i] == 'O' || boardArray[i] == 'X')
 			return true;
