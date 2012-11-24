@@ -11,6 +11,7 @@ public class Board{
 	private char[] boardArray;
 
 	public Board(){
+		boardArray = new char[9];
 		for(int i = 0; i < 9; i++){
 			boardArray[i] = (char)(i+49);
 		}
@@ -28,5 +29,10 @@ public class Board{
 			}
 		}
 	}
+	public char[] getBoardArray()
+	{
+		return boardArray;
+	}
+
 }
  
