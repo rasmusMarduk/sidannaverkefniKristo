@@ -21,11 +21,14 @@ public class Main{
 		int markerPlace;
 	    
 	    do {
-			
+		
+	    player1.setPlayerName("");
+	    player2.setPlayerName("");
+	    	
 	    System.out.println("- - - - - TicTacToe - - - - -");
 		System.out.println("Welcome to a game of TicTacToe!");
         
-        while ( !(player1.getPlayerName() == "") )
+        while ( player1.getPlayerName() == "" )
         {
             System.out.println("Please enter a name for Player 1: ");
             try
@@ -39,7 +42,7 @@ public class Main{
         }
 
         
-        while ( !(player2.getPlayerName() == "") )
+        while ( player2.getPlayerName() == "" )
         {
             System.out.println("Please enter a name for Player 2: ");
             try
@@ -52,19 +55,19 @@ public class Main{
         	}
         } 
      	
-		//String currentPlayer = player2.getPlayerName();
-		
 		Player currentPlayer = player1;
 		
 		int markCount = 0;
 		
 		
 		while( !currentPlayer.isWinner(gameBoard)){
-			if (currentPlayer == player1)
+			if (currentPlayer == player1 && markCount != 0)
 				currentPlayer = player2;
 			else if (markCount != 0)
 				currentPlayer = player1;
 		
+			gameBoard.printBoard();
+			
 	    	System.out.println("It's " + currentPlayer.getPlayerName() + " turn. Choose a number: ");
             try
             {
@@ -74,6 +77,7 @@ public class Main{
             {
                 e.printStackTrace();
         	}
+            
 	    	
 	    	markerPlaceChar = markerString.charAt(0);
 	    	markerPlace = markerPlaceChar - 49;
@@ -82,27 +86,16 @@ public class Main{
 	    	
 	    	gameBoard.updateBoard(markerPlace, currentPlayer.getPlayerMarker());
 	    	
-	    	gameBoard.printBoard();
-	    	
-	    	if (gameBoard.isDraw())
+	    	if (gameBoard.isDraw(currentPlayer, gameBoard))
 	    		break;
+	    	else if (currentPlayer.isWinner(gameBoard))
+	    		System.out.println(currentPlayer.getPlayerName() + " is the winner!");
 	    	
-	    	    	
-	    	// Check rows
-	        
-	            // 0 1 2 , 3 4 5 , 6 7 8
-				
-			// Check columns
-   	     
-				// 0 3 6 , 1 4 7 , 2 5 8
-   	     
-   	    	// Check diagonals
-   	     
-		 		// 0 4 7 , 2 4 6
-	        //isWinner = true
 	    	markCount++;
 	    	
 	    }
+		gameBoard.printBoard();
+		gameBoard.cleanBoard();
 		System.out.println("Play another game? (y/n)");
         try
         {
