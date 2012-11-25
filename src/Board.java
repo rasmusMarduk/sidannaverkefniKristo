@@ -18,7 +18,7 @@ public class Board{
 	}
 	
 	public boolean updateBoard(int place, char marker){
-		if ( place < 9 ){	// If user input is 9, place will be 8
+		if (( place < 9 ) && (place >= 0)){	// If user input is 9, place will be 8
 			this.boardArray[place] = marker;
 			return true;
 		}
