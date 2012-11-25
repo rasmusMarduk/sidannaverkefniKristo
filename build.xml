@@ -11,12 +11,10 @@
     <property name="test.classes" value="${build.dir}/test-classes" />
 
 	<!-- Sets the classpath for the JUnit library -->
-	<path id="classpath">
-        <pathelement location="${build.dir}" />
-        <fileset dir="${lib.dir}">
-            <include name="*.jar" />
-        </fileset>
-    </path>
+	<path id="classpath">  
+	        <pathelement location="lib/*.jar" />  
+	        <pathelement location="${build.dir}" />  
+	    </path>  
 	
 	<!-- Sets the classpath for the test class files -->
 	<path id="test.classpath">
@@ -75,7 +73,7 @@
 	</target>
 
     <target name="run" depends="clean,compile">
-        <java classname="main.TicTacToe" fork="yes">
+        <java classname="Main.TicTacToe" fork="yes">
             <classpath refid="classpath" />
         </java>
     </target>

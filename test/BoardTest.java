@@ -1,24 +1,29 @@
-
+package tictactoe;
 import junit.framework.*;
 import org.junit.Before;
 import org.junit.Test;
-import tictactoe.*;
+import static org.junit.Assert.assertEquals;
 
-public class BoardTest extends Assert 
-{
-	public void testAdd() throws Exception {
-		Board board1 = new Board();
-		/*
-		assertEquals("1");
-		assertEquals("2");
-		assertEquals("3");
-		assertEquals("4");
-		assertEquals("5");
-		assertEquals("6");
-		assertEquals("7");
-		assertEquals("8");
-		assertEquals("9");
-		*/
-		Assert.assertEquals("1", "1");
-	}
+
+public class BoardTest {
+
+    @Test
+    public void TestInitializedBoard() 
+    {
+        // Arrange:
+        Board board = new Board();
+
+        // Assert:
+        assertEquals("[1][2][3]\n[4][5][6]\n[7][8][9]\n", board.getBoardString());
+    }
+	@Test
+    public void TestUpdateBoard()
+    {
+        // Arrange:
+        Board board = new Board();
+
+        // Assert:
+        assertEquals(true, board.updateBoard(1, "X"));
+        assertEquals(false, board.updateBoard(21, "X"));
+    }
 }
