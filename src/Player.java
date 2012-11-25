@@ -40,12 +40,18 @@ public class Player{
 			int j=i/3; 
 			if ((gameBoard[i] == marker && gameBoard[i+1] == marker && gameBoard[i+2] == marker) ||		//Tékkum á röðunum..
 				(gameBoard[j] == marker && gameBoard[j+3] == marker && gameBoard[j+6] == marker))		//..og dálkunum..
+			{
+				System.out.println(this.getPlayerName() + "is the winner!");
 				return true;
+			}		
 		}	
 
 		if ((gameBoard[0] == marker && gameBoard[4] == marker && gameBoard[8] == marker) ||		//..og hornalínunum.
 			(gameBoard[2] == marker && gameBoard[4] == marker && gameBoard[6] == marker))
-		return true;
+		{
+			System.out.println(this.getPlayerName() + "is the winner!");
+			return true;
+		}	
 
 		return false;
 	}
