@@ -2,7 +2,7 @@ package tictactoe;
 import junit.framework.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert.*;
 
 
 public class BoardTest {
