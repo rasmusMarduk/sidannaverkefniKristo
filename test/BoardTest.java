@@ -12,9 +12,10 @@ public class BoardTest {
     {
         // Arrange:
         Board board = new Board();
+		char[] charArray = {'1','2','3','4','5','6','7','8','9'};
 
         // Assert:
-        assertEquals("[1][2][3]\n[4][5][6]\n[7][8][9]\n", board.getBoardString());
+        assertArrayEquals(charArray, board.getBoardArray());
     }
 	@Test
     public void TestUpdateBoard()
@@ -23,7 +24,7 @@ public class BoardTest {
         Board board = new Board();
 
         // Assert:
-        assertEquals(true, board.updateBoard(1, "X"));
-        assertEquals(false, board.updateBoard(21, "X"));
+        assertTrue(board.updateBoard(1, 'X'));
+        assertFalse(board.updateBoard(21, 'X'));
     }
 }
