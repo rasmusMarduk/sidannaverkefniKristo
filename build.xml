@@ -11,19 +11,22 @@
     <property name="test.classes" value="${build.dir}/test-classes" />
 
 	<!-- Sets the classpath for the JUnit library -->
+<<<<<<< HEAD
+	<path id="classpath" cache="true">
+	    <pathelement location="${build.dir}" />
+	    <!--pathelement location="${lib.dir}" /-->
+        <fileset dir="${lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+=======
 	<path id="classpath">  
 	        <pathelement location="lib/*.jar" />  
 	        <pathelement location="${build.dir}" />  
 	    </path>  
+>>>>>>> origin
 	
-	<!-- Sets the classpath for the test class files -->
-	<path id="test.classpath">
-        <pathelement location="${build.dir}" />
-        <fileset dir="${test.classes}">
-            <include name="*.class" />
-        </fileset>
-    </path>
-        
+	
     <!-- Deletes the existing build directories -->
     <target name="clean">
         <delete dir="${build.dir}" />
@@ -41,28 +44,39 @@
 	</target>
 
     <!-- Compiles the java code (including the usage of library for JUnit -->
+	<!-- NOTE:  includeantruntime might need to be set to "true" for previous versions of ANT -->
     <target name="compile" depends="clean, makedir, init">
-        <javac srcdir="${src.dir}" destdir="${build.dir}">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
             <classpath refid="classpath" />
         </javac>
     </target>
 
     <!-- Compiles the java code (including the usage of library for JUnit) -->
+	<!-- NOTE:  includeantruntime might need to be set to "true" for previous versions of ANT -->
     <target name="compile-test">
-        <javac srcdir="${test.dir}" destdir="${test.classes}" debug="yes">
+        <javac srcdir="${test.dir}" destdir="${test.classes}" debug="yes" includeantruntime="false">
             <classpath refid="classpath" />
             <include name="**/*.java" />
         </javac>
     </target>
         
+	<!-- Sets the classpath for the JUnit library -->
+	<path id="test.class.path">
+	    <pathelement location="${build.dir}" />
+	    <pathelement location="${lib.dir}" />
+		<pathelement location="${test.classes}"/>
+        <fileset dir="${lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+	</path>
+
 	<!-- Run the JUnit Tests -->
 	<!-- Output is XML, could also be plain-->
 	<target name="test" depends="clean, compile-test">
 		<junit printsummary="on" fork="false" haltonfailure="yes">
+        	<classpath refid="classpath" />
+			<classpath refid="test.class.path"/>
 			<formatter type="xml" />
-				<classpath>
-					<pathelement location="${build.dir}/test-classes" />
-				</classpath>
 	       	<batchtest todir="${test.dir}" unless="hasFailingTests">
 	           	<fileset dir="${test.dir}"> 
 					<include name="**/*Test*.java" />
