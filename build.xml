@@ -13,9 +13,10 @@
 	<!-- Sets the classpath for the JUnit library -->
 	<path id="classpath" cache="true">
 	    <pathelement location="${build.dir}" />
-	    <!--pathelement location="${lib.dir}" /-->
+	    <pathelement location="${lib.dir}" />
         <fileset dir="${lib.dir}">
-            <include name="*.jar" />
+            <include name="**/*.jar" />
+            <include name="**/*.java" />
         </fileset>
     </path>
 	
@@ -48,7 +49,10 @@
     <target name="compile-test">
         <javac srcdir="${test.dir}" destdir="${test.classes}" debug="yes" includeantruntime="false">
             <classpath refid="classpath" />
-            <include name="**/*.java" />
+	        <classpath>
+	            <pathelement path="${build.dir}" />
+   	        	<fileset dir="${lib.dir}" includes="**/*.jar" />
+   		    </classpath>
         </javac>
     </target>
         
@@ -67,6 +71,10 @@
 	<target name="test" depends="clean, compile-test">
 		<junit printsummary="on" fork="false" haltonfailure="yes">
         	<classpath refid="classpath" />
+			<classpath>
+	            <pathelement path="${build.dir}" />
+            	<fileset dir="${lib.dir}" includes="**/*.jar" />
+	        </classpath>
 			<classpath refid="test.class.path"/>
 			<formatter type="xml" />
 	       	<batchtest todir="${test.dir}" unless="hasFailingTests">
