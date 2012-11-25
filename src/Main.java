@@ -94,8 +94,6 @@ public class Main{
 	    	markCount++;
 	    	
 	    }
-		
-			}
 		gameBoard.printBoard();
 		gameBoard.cleanBoard();
 		System.out.println("Play another game? (y/n)");
