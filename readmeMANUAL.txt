@@ -1,28 +1,37 @@
-
 Stjórnunarhandbók
 
-Til að þýða og keyra leikinn þarft viðskiptavinurinn að hafa eftirfarandi hluti uppsetta:
-		- Apache ant
-		- JDK 1.7+
+Til þess að keyra leikinn þarf viðskiptavinurinn að hafa eftirfarandi hluti uppsetta:
+	- JDK 1.7+
+
+Til að þýða leikinn þarf viðskiptavinurinn að hafa eftirfarandi hluti uppsetta:
+	- Apache ant
+	- JDK 1.7+
 		
-Til þess að geta keyrt leikinn frá jar skránni þarf viðskiptavinurinn einungis að hafa Java runtime enviroment uppsett. 
-Eftirfarandi skref þurfa því aðeins að vera keyrð einu sinni, eftir það mun viðskiptavinurinn hafa jar skránna sem er nauðsynleg til þess
-að geta dreift leiknum.
-		
-		1. Niðurhala zip skrá frá https://github.com/rasmusMarduk/sidannaverkefniKristo 
-		2. Draga úr skránni, helst í heima möppuna á tölvunni. Niðurstaðan er mappa sem heitir sidannaverkefniKristo 
-		
-		
--------- Microsoft Windows:
-	3. Viðskiptavinurinn þarf að keyra eftirfarandi skipanir í skelinni í TicTacToe möppunni:
-			- ant run 
-			
-			
-	4. Keyrslufæra jar skráin sem inniheldur leikinn verður staðsett í möppu utan SidannaverkefniKristo og heitir hún 
-TicTacToe
+Til þess að geta keyrt leikinn frá jar skránni þarf viðskiptavinurinn einungis að hafa Java runtime enviroment uppsett.
+Þetta er skipanahamsleikur og því þarf að keyra hann í skipanaham.
 	
+	1. Afþjappa sidannaverkefniKristo.tar.gz (eða .zip)
+	2. Opna möppuna sidannaverkefniKristo
+		a. Opna möppuna Versions
+		b. Opna nýjustu útgáfu af TicTacToe
+	3. Keyra JAR skrána með eftirfarandi skipun
+		java -jar lalli.jar
+	4. Njóta þess að spila Myllu!
+
+Eftirfarandi skref þarf að fara í gegnum til að keyra einingaprufanir og/eða búa til nýja JAR skrá. Reiknað
+er með að notandi hafi forritin sem eru nefnd hér efst og að notandi vinni í skipanaham.
 	
-	
+	1. Niðurhala zip eða tar skrá frá https://github.com/rasmusMarduk/sidannaverkefniKristo/downloads
+	2. Afþjappa skránni á stað að eigin vali, úr því kemur mappa sem heitir sidannaverkefniKristo.
+	3. Opna skal möppuna sidannaverkefniKristo
+	4. Hér er hægt að keyra eftirfarandi skipanir
+		a. Keyra þarf eftirfarandi skipun til að keyra einungis prufanir:
+			ant unit-test
+		b. Keyra þarf eftirfarandi skipun til að keyra leikinn
+			ant run
+		c. Til þess að þýða og gera prófanir er hægt að skrifa einfaldlega
+			ant
+		
 	Þróunarhandbók (development manual)
 	
 	Eftirfarandi hluti þarf að gera á "hreinni" vél til þess að geta builda og bætt við kóða á verkefninu.
@@ -65,33 +74,3 @@ TicTacToe
 	- Ná þarf í nýjasta jdk pakkann fyrir mismunandi tegundir af Linux og Mac os stýrikerfum og installa því
 	- Settu í .bashrc eða svipað, export JAVA_HOME="/usr/java/jdk1.7.0;
 	- Í lokin þarf svo að Installa ant.
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
