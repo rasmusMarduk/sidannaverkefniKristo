@@ -25,7 +25,10 @@ public class BoardTest {
         assertEquals(S, M);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
 =======
 >>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
 }

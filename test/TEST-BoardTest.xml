@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite errors="1" failures="0" hostname="Kristo-PC" name="BoardTest" tests="1" time="0.0" timestamp="2012-11-26T12:53:40">
+=======
+<testsuite errors="1" failures="0" hostname="Oskar-PC" name="BoardTest" tests="1" time="0.0" timestamp="2012-11-26T12:32:27">
+>>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
 =======
 <testsuite errors="1" failures="0" hostname="Oskar-PC" name="BoardTest" tests="1" time="0.0" timestamp="2012-11-26T12:32:27">
 >>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
@@ -62,7 +66,11 @@
     <property name="java.class.path" value="C:\apache-ant-1.8.4\lib\ant-launcher.jar;C:\Users\Oskar Helgi\Documents\GitHub\sidannaverkefniKristo\.\;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip;C:\apache-ant-1.8.4\lib\ant-antlr.jar;C:\apache-ant-1.8.4\lib\ant-apache-bcel.jar;C:\apache-ant-1.8.4\lib\ant-apache-bsf.jar;C:\apache-ant-1.8.4\lib\ant-apache-log4j.jar;C:\apache-ant-1.8.4\lib\ant-apache-oro.jar;C:\apache-ant-1.8.4\lib\ant-apache-regexp.jar;C:\apache-ant-1.8.4\lib\ant-apache-resolver.jar;C:\apache-ant-1.8.4\lib\ant-apache-xalan2.jar;C:\apache-ant-1.8.4\lib\ant-commons-logging.jar;C:\apache-ant-1.8.4\lib\ant-commons-net.jar;C:\apache-ant-1.8.4\lib\ant-jai.jar;C:\apache-ant-1.8.4\lib\ant-javamail.jar;C:\apache-ant-1.8.4\lib\ant-jdepend.jar;C:\apache-ant-1.8.4\lib\ant-jmf.jar;C:\apache-ant-1.8.4\lib\ant-jsch.jar;C:\apache-ant-1.8.4\lib\ant-junit.jar;C:\apache-ant-1.8.4\lib\ant-junit4.jar;C:\apache-ant-1.8.4\lib\ant-launcher.jar;C:\apache-ant-1.8.4\lib\ant-netrexx.jar;C:\apache-ant-1.8.4\lib\ant-swing.jar;C:\apache-ant-1.8.4\lib\ant-testutil.jar;C:\apache-ant-1.8.4\lib\ant.jar;C:\Program Files\Java\jdk1.7.0_09\lib\tools.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.8.4 compiled on May 22 2012" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="TSTAMP" value="1253" />
+=======
+    <property name="TSTAMP" value="1232" />
+>>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
 =======
     <property name="TSTAMP" value="1232" />
 >>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
