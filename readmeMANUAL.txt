@@ -12,12 +12,7 @@ að geta dreift leiknum.
 		1. Niðurhala zip skrá frá https://github.com/rasmusMarduk/sidannaverkefniKristo 
 		2. Draga úr skránni, helst í heima möppuna á tölvunni. Niðurstaðan er mappa sem heitir sidannaverkefniKristo 
 		
-		-- GNU / Linux:  ////// þurfum að skoða og breyta og laga
-3. Make sure the runLinux.sh is executable (right click or run chmod -x runLinux.sh ).
-4. Run the script by entering ./runLinux.sh in a terminal window from the Mylla directory. It will run tests, compile the game and create an executable .jar file. It will then ask if you would like to play the game.
-5. The executable jar file containing the game will be located in the hidden folder: ~/.m2/repository/is/marshmallow/Mylla/1.3-SNAPSHOT and can be distributed and executed from anywhere by issuing the command java -jar Mylla-1.3-SNAPSHOT.jar
-Alternative: Run the commands manually as listed below in the Windows section.
-
+		
 -------- Microsoft Windows:
 	3. Viðskiptavinurinn þarf að keyra eftirfarandi skipanir í skelinni í TicTacToe möppunni:
 			- ant run 
