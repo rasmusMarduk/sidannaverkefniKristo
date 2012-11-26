@@ -1,4 +1,24 @@
 Retrospective
 
+Teymið varð strax fyrir áfalli þegar einn þriðji hópmeðlima féllu úr lestinni strax í byrjun. Gott hefði 
+verið að hafa sex meðlimi í hópnum en við vorum einungis fjórir. Lærdómsþröskuldurinn á þessu verkefni 
+þótti hár og tók langan tíma að sækja og læra á hin ýmsu forrit, forritunarmál og umhverfi. Val á hugbúnaði hefði 
+getað verið betur úthugsað til að auðvelda vinnu og rannsóknir, til dæmis með því að kanna hvernig samsetning 
+valins hugbúnaðar hafi reynst hjá öðrum.
 
-Teymið varð strax fyrir áfalli þegar 1/3 af hópnum féll úr lestinni í byrjun. Gott hefði verið að hafa 6 í hópnumen við vorum einungis 4. Lærdómsþröskuldurinn á þessu verkefni er hár og tók langan tíma að dl og læra á hin ýmsu forrit og mál og umhverfi. Teymið hefði getað valið þægilegri hugbúnað sem meðlimir þekktu til þess að auðvelda framkvæmd verkefnisins. Fyrr hefði teymið getað tekið upp Xp forritunarvenjur og skipt sér niður í tvo tveggja manna hópa. Teyminu fannst aðal árangurshindrunin hafa verið kunnáttuleysi því það er erfitt að gera hluti sem maður hefur aldrei gert áður. Teymið hefði þegið það með þökkum að hafa haft hópmeðlim sem byggi yfir einhverri smá reynslu á viðfangsefninu, sem hann gæti miðlað til hinna í teyminu. Útaf þessu kunnáttuleysi treysti sér engin til að stjórna framkvæmd verkefnisins og varð það því stefnulaust á tímum.
+Á fyrstu skrefum sinntum við verkefnum hver fyrir sig en fórum fljótlega að vinna tveir og tveir saman við 
+Xp forritunarvenjur. Teyminu fannst aðal árangurshindrunin hafa verið reynsluleysi með valin forrit þar sem 
+mikill tími fór í að leita að ástæðum fyrir því að þau virkuðu ekki eins og ætlast var til af þeim. Teyminu 
+hefði veitt vel af að hafa haft hópmeðlim sem byggi yfir einhverri reynslu á viðfangsefninu, sem hann gæti 
+miðlað til hinna í teyminu. Útaf reynsluleysi treysti sér engin til að taka stjórn við framkvæmd verkefnisins 
+og varð það því stefnulaust á tímum.
+
+Teymið ákvað að hafa leikinn sem einfaldastann í sniðum og eyða þá meiri tíma í mikilvægari hluta verkefnisins 
+eins og keyrslu og prufanir. Var þá valið að vera með leik sem er eingöngu spilaður í skipanaham. Teymið hafði 
+mesta reynslu af því að vinna með Java sem varð þá fyrir valinu og útfrá því var ANT keyrslukerfið valið því 
+það hafði verið gefið sem dæmi í verkefnalýsingunni. Þá var JUnit valið til þess að gera einingaprufanir.
+
+Rangt var farið að forgangsatriðum til að byrja með og var byrjað á að skrifa leikinn og svo unnið í 
+keyrsluskránni og því fylgdu ákveðin vandkvæði, svosem að prufana klasar vildu ekki keyra eðlilega vegna 
+mikilla vandkvæða með að fá JUnit til þess að virka með ANT náðist ekki að keyra einingaprófanirnar 
+almennilega.
