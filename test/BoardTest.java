@@ -24,3 +24,4 @@ public class BoardTest {
 		// Assert:
         assertEquals(S, M);
     }
+}
