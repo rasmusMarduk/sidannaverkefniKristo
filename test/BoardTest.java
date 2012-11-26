@@ -21,10 +21,11 @@ public class BoardTest {
         
         String S = "123456789";
         
-		
-        
-        // Assert:
+		// Assert:
         assertEquals(S, M);
     }
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 02648d20361fee35e8dc2a514d28ae2783dcea09
 }
