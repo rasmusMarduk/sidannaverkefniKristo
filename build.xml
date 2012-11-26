@@ -9,12 +9,13 @@
     <property name="lib.dir" value="lib" />
     <property name="test.dir" value="test" />
     <property name="test.classes" value="${build.dir}/test-classes" />
+    <property name="docs.dir" value="docs" />
 
 	<!-- Sets the classpath for the JUnit library -->
 	<path id="classpath" cache="true">
 	    <pathelement location="${build.dir}" />
         <fileset dir="${lib.dir}">
-            <include name="**/*.jar" />
+            <include name="*.jar" />
         </fileset>
     </path>
 	
@@ -22,18 +23,20 @@
 	<path id="test.class.path">
 	    <pathelement location="${build.dir}" />
         <fileset dir="${test.classes}">
-            <include name="*.class" />
+            <include name="**/*.class" />
         </fileset>
 	</path>
 
     <!-- Deletes the existing build directories -->
     <target name="clean">
         <delete dir="${build.dir}" />
+        <delete dir="${docs.dir}" />
     </target>
         
     <!-- Creates the build directories -->
     <target name="makedir">
         <mkdir dir="build" />
+        <mkdir dir="docs" />
         <mkdir dir="${build.dir}/test-classes" />
     </target>
         
@@ -49,23 +52,19 @@
             <classpath refid="classpath" />
         </javac>
     </target>
-
-    <!-- Compiles the java code (including the usage of library for JUnit) -->
+    
+	<!-- Compiles the java code (including the usage of library for JUnit -->
 	<!-- NOTE:  includeantruntime might need to be set to the default "true" for previous versions of ANT -->
-    <target name="compile-test">
+    <target name="compile-test" depends="clean, makedir, init">
         <javac srcdir="${test.dir}" destdir="${test.classes}" debug="yes" includeantruntime="false">
             <classpath refid="classpath" />
-	        <classpath>
-	            <pathelement path="${build.dir}" />
-   	        	<fileset dir="${lib.dir}" includes="**/*.jar" />
-   		    </classpath>
         </javac>
     </target>
-        
+      
 	<!-- Run the JUnit Tests -->
 	<!-- Output is XML, could also be plain-->
-	<target name="test" depends="clean, compile-test">
-		<junit printsummary="on" fork="false" haltonfailure="yes">
+	<target name="unit-test" depends="clean, compile, compile-test" >
+		<junit printsummary="on" fork="yes" haltonfailure="yes" showoutput="yes">
         	<classpath refid="classpath" />
 			<classpath refid="test.class.path"/>
 			<formatter type="xml" />
@@ -84,6 +83,6 @@
         </java>
     </target>
 
-    <target name="main" depends="clean,compile,compile-test,test">
+    <target name="main" depends="clean,compile,compile-test,unit-test">
     </target>
 </project>
