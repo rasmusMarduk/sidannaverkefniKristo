@@ -9,7 +9,7 @@ Til þess að geta keyrt leikinn frá jar skránni þarf viðskiptavinurinn einungis a
 Eftirfarandi skref þurfa því aðeins að vera keyrð einu sinni, eftir það mun viðskiptavinurinn hafa jar skránna sem er nauðsynleg til þess
 að geta dreift leiknum.
 		
-		1. Niðurhala zip skrá frá https://github.com/rasmusMarduk/sidannaverkefniKristo  ///(setja inn retta slod)
+		1. Niðurhala zip skrá frá https://github.com/rasmusMarduk/sidannaverkefniKristo 
 		2. Draga úr skránni, helst í heima möppuna á tölvunni. Niðurstaðan er mappa sem heitir sidannaverkefniKristo 
 		
 		-- GNU / Linux:  ////// þurfum að skoða og breyta og laga
@@ -23,7 +23,8 @@ Alternative: Run the commands manually as listed below in the Windows section.
 			- ant run 
 			
 			
-	4. Keyrslufæra jar skráin sem inniheldur leikinn verður staðsett í sömu möppu og mappan sidannaverkefniKristo
+	4. Keyrslufæra jar skráin sem inniheldur leikinn verður staðsett í möppu utan SidannaverkefniKristo og heitir hún 
+TicTacToe
 	
 	
 	
