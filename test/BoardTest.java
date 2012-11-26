@@ -15,7 +15,7 @@ public class BoardTest {
 		char[] charArray = {'1','2','3','4','5','6','7','8','9'};
 
         // Assert:
-        //Assert.assertArrayEquals(charArray, board.getBoardArray());
+        Assert.assertArrayEquals(charArray, board.getBoardArray());
     }
 	@Test
     public void TestUpdateBoard()
