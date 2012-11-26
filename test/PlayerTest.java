@@ -5,7 +5,7 @@ import tictactoe.*;
 
 public class PlayerTest {
 
-	@Test
+	/*@Test
 	public void should_set_and_get_value_in_grid() throws Exception {
 		/*	
 			Player player1 = new Player();
@@ -15,4 +15,6 @@ public class PlayerTest {
 			assertEquals("x");
 			*/
 	}
+}
+*/
 }

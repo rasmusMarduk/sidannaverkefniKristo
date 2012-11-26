@@ -12,6 +12,7 @@ public class Main{
 		Board gameBoard = new Board();
 	    Player player1 = new Player("", 'X');
 	    Player player2 = new Player("", 'O');
+				//Spilararnir tveir hafa ekki eins merki
 	    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	    String cont="";
 	    String markerString ="";
@@ -53,17 +54,18 @@ public class Main{
         	}
         } 
      	
-		Player currentPlayer = player1;
+		Player currentPlayer = player1;	//Fyrsti leikurinn er framkvæmdur af player1
 		
-		int markCount = 0;
+		int markCount = 0;	//Hversu marga reiti er búið að merkja í
 		
 		
 		while( !currentPlayer.isWinner(gameBoard)){
+							//Veljum reiti þangað til við erum komin með sigurvegara
 			if (currentPlayer == player1 && markCount != 0)
-				currentPlayer = player2;
+				currentPlayer = player2;	//Skiptum um leikmann á í hverru umferð
 			else if (markCount != 0)
 				currentPlayer = player1;
-		
+					
 			gameBoard.printBoard();
 			
 			tryCount = 0; markerPlace = -1;
@@ -75,7 +77,8 @@ public class Main{
 										//nú þegar verið valinn.
 				if (tryCount == 0)
 					System.out.println("It's " + currentPlayer.getPlayerName() + "'s turn. Choose a number: ");
-            	try
+										//Segjum hver á að velja í upphafi hvers vals
+				try
             	{
             		markerString = in.readLine();  
             	}
@@ -93,8 +96,9 @@ public class Main{
             		System.out.println("That's not a valid place number! Try again:");
             	else if (gameBoard.isFilled(markerPlace))
             		System.out.println("This place is already taken! Try again:");
-            	
-            							//Ef valið er skrítið, þá segjum við leikmanninum það
+					            	
+            							//Ef valið er ólöglegt á einhvern hátt, 
+										//þá segjum við leikmanninum það
             	tryCount++;
 			}
 	    	

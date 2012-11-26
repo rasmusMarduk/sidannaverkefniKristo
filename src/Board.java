@@ -50,7 +50,7 @@ public class Board{
 		return false;
 	}
 	
-	public boolean isFull()
+	public boolean isFull() //Tékkar hvort búið sé að merkja í alla reitina á borðinu
 	{
 		if (isFilled(0) && isFilled(1) && isFilled(2) && isFilled(3) && isFilled(4) &&
 			isFilled(5) && isFilled(6) && isFilled(7) && isFilled(8) )
