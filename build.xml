@@ -77,12 +77,21 @@
 		</junit>
 	</target>
 
-    <target name="run" depends="clean,compile">
-        <java classname="Main.TicTacToe" fork="yes">
-            <classpath refid="classpath" />
-        </java>
+	<!-- Crate a runnable JAR file -->
+    <target name="jar" depends="compile, compile-test" description="create a Jar file for the application">
+        <jar destfile="../TicTacToe/lalli.jar">
+            <fileset dir="${build.dir}" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Main-class" value="tictactoe.Main"/>
+            </manifest>
+        </jar>
     </target>
 
-    <target name="main" depends="clean,compile,compile-test,unit-test">
+    <target name="run" depends="clean, compile, compile-test, jar">
+		<java arg="-jar" executable="./../TicTacToe/lalli.jar">
+		</java>
+    </target>
+
+    <target name="main" depends="clean, compile, compile-test, unit-test, jar">
     </target>
 </project>
