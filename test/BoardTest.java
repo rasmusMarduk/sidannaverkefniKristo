@@ -21,18 +21,6 @@ public class BoardTest {
         
         String S = "123456789";
         
-		
-        
-        // Assert:
+		// Assert:
         assertEquals(S, M);
     }
-	@Test
-    public void TestUpdateBoard()
-    {
-        // Arrange:
-        Board board = new Board();
-
-        // Assert:
-        ;
-    }
-}
