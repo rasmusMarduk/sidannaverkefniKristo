@@ -3,7 +3,7 @@
  *
  */
 
-package Skoli;
+package tictactoe;
 
 import java.io.*;
 
