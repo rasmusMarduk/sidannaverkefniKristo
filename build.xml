@@ -88,8 +88,8 @@
     </target>
 
     <target name="run" depends="clean, compile, compile-test, jar">
-		<java arg="-jar" executable="./../TicTacToe/lalli.jar">
-		</java>
+		<java jar="../TicTacToe/lalli.jar" fork="true"/>
+			<!--arg value="-jar"/-->
     </target>
 
     <target name="main" depends="clean, compile, compile-test, unit-test, jar">
