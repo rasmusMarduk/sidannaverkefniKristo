@@ -1,0 +1,14 @@
+----TicTacToe - Design Report----
+
+Við setjum upp 2 klasa; Player og Board.
+- Player inniheldur tvær meðlimabreytur, nafn leikmans og X eða O.
+--Eitt aðalklasafall sem athugar hvort leikmaður hafi unnið.
+
+- Board inniheldur eina meðlimabreytu, char fylki. 
+--Klasaföll sem sjá um að frumstylla borðið, breyta einstökm reitum, hreinsa það á milli leikja, prentar það út og athugar hvort það sé jafnteflisstaða.
+
+Main fall sér svo um alla virkni leiksins
+-Prentar borðið á skjáinn í byrjun og lok leiks, sem og á milli innslátta.
+-Les inn af skjánum hvaða reiti spilarar vilja merkja. 
+-Ef spilarar vilja merkja í reit sem er ekki til eða er nú þegar merktur kemur upp villa og spilari beðinn um að reyna aftur. Sama gerist ef spilari slær inn eitthvað sem er ekki tala.
+-Í lok hvers leiks eru spilarar svo spurðir hvort þeir vilji spila annan leik. Leikurinn fer þá af stað frá byrjun ef svarað er játandi.
