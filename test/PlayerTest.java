@@ -1,20 +1,24 @@
-import junit.framework.*;
-import org.junit.Before;
+import static org.junit.Assert.*;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 import tictactoe.*;
 
 public class PlayerTest {
 
-	/*@Test
-	public void should_set_and_get_value_in_grid() throws Exception {
-		/*	
-			Player player1 = new Player();
-			player1.setPlayerName("lalli");
-			assertEquals("lalli");
-			player1.setPlayerMarker("x");
-			assertEquals("x");
-			*/
+	@Test
+	public void TestPlayerName() throws Exception {
+			// Arrange
+			Player player1 = new Player("lalli", 'X');
+
+			// Assert
+			assertEquals("lalli", player1.getPlayerName());
 	}
-}
-*/
+	
+	public void TestPlayerMarker() throws Exception {
+			// Arrange
+			Player player1 = new Player("lalli", 'X');
+
+			// Assert
+			assertEquals('X', player1.getPlayerMarker());
+	}
 }

@@ -1,9 +1,7 @@
-package tictactoe;
-
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import tictactoe.*;
 
 public class BoardTest {
 
@@ -12,11 +10,11 @@ public class BoardTest {
     {
         // Arrange:
         Board board = new Board();
-        char[] K=board.getBoardArray();
-        String M="";
+        char[] K = board.getBoardArray();
+        String M = "";
         for(int i=0; i<9; i++)
         {
-        	M+=K[i];
+        	M += K[i];
         }
         
         String S = "123456789";
