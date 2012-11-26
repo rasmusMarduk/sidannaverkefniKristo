@@ -3,7 +3,7 @@
  *
  */
 
-package tictactoe;
+package Skoli;
 
 import java.io.*;
 
@@ -17,8 +17,8 @@ public class Main{
 	    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	    String cont="";
 	    String markerString ="";
-	    char markerPlaceChar;
-		int markerPlace;
+	    char markerPlaceChar = 'a';
+		int markerPlace, tryCount;
 	    
 	    do {
 		
@@ -68,20 +68,36 @@ public class Main{
 		
 			gameBoard.printBoard();
 			
-	    	System.out.println("It's " + currentPlayer.getPlayerName() + " turn. Choose a number: ");
-            try
-            {
-            	markerString = in.readLine();  
-            } 
-            catch (IOException e) 
-            {
-                e.printStackTrace();
-        	}
-            
-	    	
-	    	markerPlaceChar = markerString.charAt(0);
-	    	markerPlace = markerPlaceChar - 49;
-	    	
+			tryCount = 0; markerPlace = -1;
+					
+			while (!Character.isDigit(markerPlaceChar) || markerPlace < 0 || 
+					markerString.length() != 1 || gameBoard.isFilled(markerPlace)){
+										//Lesum inn reitaval þangað til við valið er löglegt
+										//Það er lögleg ef það er tölustafur á bilini 1-9 sem ekki hefur
+										//nú þegar verið valinn.
+				if (tryCount == 0)
+					System.out.println("It's " + currentPlayer.getPlayerName() + "'s turn. Choose a number: ");
+            	try
+            	{
+            		markerString = in.readLine();  
+            	} 
+            	catch (IOException e) 
+            	{
+            		e.printStackTrace();
+            	}
+			
+            	markerPlaceChar = markerString.charAt(0);
+            	markerPlace = markerPlaceChar - 49;
+            	
+            	if (!Character.isDigit(markerPlaceChar))
+            		System.out.println("That's not a number! Try again:");
+            	else if (gameBoard.isFilled(markerPlace))
+            		System.out.println("This place is already taken! Try again:");
+            	else if (markerString.length() != 1)
+            		System.out.println("That's not a valid place number! Try again:");
+            							//Ef valið er skrítið, þá segjum við leikmanninum það
+            	tryCount++;
+			}
 	    	//theGameBoard[markerPlace] = currentPlayer.getPlayerMarker();
 	    	
 	    	gameBoard.updateBoard(markerPlace, currentPlayer.getPlayerMarker());

@@ -3,7 +3,7 @@
  *
  */
 
-package tictactoe;
+package Skoli;
 
 import java.io.*;
 
@@ -17,15 +17,9 @@ public class Board{
 		}
 	}
 	
-	public boolean updateBoard(int place, char marker){
-		if (((place < 9) && (place >= 0)) 
-				&& !isFilled(place))
-		{							// If user input is 9, place will be 8
-			this.boardArray[place] = marker;
-			return true;
-		}
-		return false;
-	}
+	public void updateBoard(int place, char marker){
+		this.boardArray[place] = marker;	//Breytti þessu aftur í void úr boolean því 
+	}										//það hentar betur að hafa villutékk í main fallinu.
 	
 	public void cleanBoard(){
 		for (int i=0; i<9; i++){

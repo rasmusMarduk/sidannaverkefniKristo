@@ -3,7 +3,7 @@
  *
  */
 
-package tictactoe;
+package Skoli;
 
 public class Player{
 	private String name;
