@@ -10,10 +10,8 @@ import java.io.*;
 public class Main{
 	public static void main(String [] args){
 		Board gameBoard = new Board();
-		//char[] theGameBoard = gameBoard.getBoardArray();
 	    Player player1 = new Player("", 'X');
 	    Player player2 = new Player("", 'O');
-		//boolean isWinner = false;
 	    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	    String cont="";
 	    String markerString ="";
@@ -70,17 +68,17 @@ public class Main{
 			
 			tryCount = 0; markerPlace = -1;
 					
-			while (!Character.isDigit(markerPlaceChar) || markerPlace < 0 || 
+			while (markerPlace < 0 || !Character.isDigit(markerPlaceChar) ||  
 					markerString.length() != 1 || gameBoard.isFilled(markerPlace)){
 										//Lesum inn reitaval þangað til við valið er löglegt
-										//Það er lögleg ef það er tölustafur á bilini 1-9 sem ekki hefur
+										//Það er lögleg ef það er tölustafur á bilinu 1-9 sem ekki hefur
 										//nú þegar verið valinn.
 				if (tryCount == 0)
 					System.out.println("It's " + currentPlayer.getPlayerName() + "'s turn. Choose a number: ");
             	try
             	{
             		markerString = in.readLine();  
-            	} 
+            	}
             	catch (IOException e) 
             	{
             		e.printStackTrace();
@@ -91,14 +89,14 @@ public class Main{
             	
             	if (!Character.isDigit(markerPlaceChar))
             		System.out.println("That's not a number! Try again:");
+            	else if (markerString.length() != 1 || markerPlace < 0)
+            		System.out.println("That's not a valid place number! Try again:");
             	else if (gameBoard.isFilled(markerPlace))
             		System.out.println("This place is already taken! Try again:");
-            	else if (markerString.length() != 1)
-            		System.out.println("That's not a valid place number! Try again:");
+            	
             							//Ef valið er skrítið, þá segjum við leikmanninum það
             	tryCount++;
 			}
-	    	//theGameBoard[markerPlace] = currentPlayer.getPlayerMarker();
 	    	
 	    	gameBoard.updateBoard(markerPlace, currentPlayer.getPlayerMarker());
 	    	
